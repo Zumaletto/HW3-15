@@ -20,7 +20,7 @@ public class RepoIssue {
         return items.add(item);
     }
 
-        public List<Issue> findOpen() {
+    public List<Issue> findOpen() {
         List<Issue> issues = new ArrayList<>();
         for (Issue item : items)
             if (item.isOpen()) {
@@ -38,11 +38,17 @@ public class RepoIssue {
         return issues;
     }
 
-    public void updateById(int id) {
+    public void closeById(int id) {
         for (Issue item : items) {
             if (item.getId() == id && item.isOpen()) {
                 item.setOpen(false);
-            }else if(item.getId() == id && !item.isOpen()){
+            }
+        }
+    }
+
+    public void openById(int id) {
+        for (Issue item : items) {
+            if (item.getId() == id && !item.isOpen()) {
                 item.setOpen(true);
             }
         }

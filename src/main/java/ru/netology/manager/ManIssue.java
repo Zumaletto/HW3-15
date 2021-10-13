@@ -42,8 +42,8 @@ public class ManIssue {
         return issues;
     }
 
-    public List<Issue> findByAuthor(String author) {
-        Predicate<String> byAuthor = t -> t.equals(author);
+    public List<Issue> findByAuthor(Set<String> author) {
+        Predicate<String> byAuthor = p -> p.equals(author);
         List<Issue> issues = new ArrayList<>();
         for (Issue item : repo.findAll())
             if (byAuthor.test(item.getAuthors())) {
@@ -53,7 +53,7 @@ public class ManIssue {
     }
 
     public List<Issue> findByLabel(Set<String> label) {
-        Predicate<Set<String>> byLabel = t -> t.containsAll(label);
+        Predicate<Set<String>> byLabel = p -> p.containsAll(label);
         List<Issue> issues = new ArrayList<>();
         for (Issue item : repo.findAll())
             if (byLabel.test(item.getLabels())) {

@@ -1,15 +1,14 @@
 package ru.netology.domain;
 
-import java.util.HashSet;
 import java.util.Set;
 
-public class Issue implements Comparable <Issue>{
+public class Issue implements Comparable<Issue> {
     private int id;
     private boolean isOpen;
     private int openedDaysAgo;
     private String authors;
-    private Set<String> assignees = new HashSet<>();
-    private Set<String> labels = new HashSet<>();
+    private Set<String> assignees;
+    private Set<String> labels;
 
     public Issue(int id, boolean statusOpen, int openedDaysAgo, String authors, Set<String> assignees, Set<String> labels) {
         this.id = id;
@@ -51,7 +50,7 @@ public class Issue implements Comparable <Issue>{
         return authors;
     }
 
-    public void setAuthors(Set<String> authors) {
+    public void setAuthors(String authors) {
         this.authors = authors;
     }
 
