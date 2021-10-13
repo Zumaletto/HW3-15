@@ -10,9 +10,9 @@ public class Issue implements Comparable<Issue> {
     private Set<String> assignees;
     private Set<String> labels;
 
-    public Issue(int id, boolean statusOpen, int openedDaysAgo, String authors, Set<String> assignees, Set<String> labels) {
+    public Issue(int id, boolean isOpen, int openedDaysAgo, String authors, Set<String> assignees, Set<String> labels) {
         this.id = id;
-        this.isOpen = statusOpen;
+        this.isOpen = isOpen;
         this.openedDaysAgo = openedDaysAgo;
         this.authors = authors;
         this.assignees = assignees;
