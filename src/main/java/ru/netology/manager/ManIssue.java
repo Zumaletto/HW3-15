@@ -42,7 +42,7 @@ public class ManIssue {
         return issues;
     }
 
-    public List<Issue> findByAuthor(Set<String> author) {
+    public List<Issue> findByAuthor(String author) {
         Predicate<String> byAuthor = p -> p.equals(author);
         List<Issue> issues = new ArrayList<>();
         for (Issue item : repo.findAll())
